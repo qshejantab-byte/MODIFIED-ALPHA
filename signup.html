@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up - Alpha Computer LTD</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .signup-page {
+      min-height: 100vh;
+      background: var(--gray-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px 40px;
+    }
+
+    .signup-card {
+      background: white;
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .signup-logo {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .signup-logo img {
+      height: 70px;
+      object-fit: contain;
+    }
+
+    .signup-card h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: var(--dark-text);
+    }
+
+    .signup-card .subtitle {
+      text-align: center;
+      color: var(--gray-text);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+    }
+
+    .btn-signup-full {
+      width: 100%;
+      padding: 14px;
+      background: var(--blue-primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 8px;
+    }
+
+    .btn-signup-full:hover { background: #1f31c7; transform: translateY(-1px); }
+
+    .signup-footer-text {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.88rem;
+      color: var(--gray-text);
+    }
+
+    .signup-footer-text a { color: var(--blue-primary); font-weight: 600; }
+
+    .back-home-signup {
+      margin-top: 24px;
+      color: var(--gray-text);
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .back-home-signup:hover { color: var(--dark-text); }
+
+    /* Success screen */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .success-icon {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+      animation: successPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes successPop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .success-screen h3 { font-size: 1.5rem; margin-bottom: 8px; color: var(--dark-text); }
+    .success-screen p { color: var(--gray-text); font-size: 0.9rem; line-height: 1.7; margin-bottom: 24px; }
+
+    .user-welcome {
+      background: rgba(43,63,222,0.06);
+      border: 1px solid rgba(43,63,222,0.15);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: var(--dark-text);
+      text-align: left;
+    }
+
+    .user-welcome strong { color: var(--blue-primary); }
+
+    .btn-go-home {
+      width: 100%;
+      padding: 14px;
+      background: var(--blue-primary);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-go-home:hover { background: #1f31c7; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--gray-mid);
+      margin: 24px 0;
+    }
+
+    @media (max-width: 500px) {
+      .signup-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body class="signup-page">
+
+<div id="navbar-container"></div>
+
+<div class="signup-card">
+
+  <!-- Logo -->
+  <div class="signup-logo">
+    <img src="logo2.jpg" alt="Alpha Computer LTD"/>
+  </div>
+
+  <!-- SUCCESS SCREEN (shown after signup) -->
+  <div class="success-screen" id="success-screen">
+    <div class="success-icon">✓</div>
+    <h3>Welcome Aboard! 🎉</h3>
+    <p>You've successfully signed up. You're now part of the Alpha Computer LTD community!</p>
+    <div class="user-welcome" id="user-welcome"></div>
+    <button class="btn-go-home" onclick="goHome()">Go to Home Page →</button>
+  </div>
+
+  <!-- SIGNUP FORM -->
+  <div id="signup-form">
+    <h2>Create Account</h2>
+    <p class="subtitle">Sign up to stay connected with Alpha Computer LTD</p>
+
+    <div id="signup-error" style="display:none;background:#fef2f2;border:1px solid #fca5a5;color:#dc2626;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:0.88rem">
+      ⚠️ Please fill in all required fields.
+    </div>
+
+    <div class="form-group">
+      <label>Full Name <span style="color:red">*</span></label>
+      <input type="text" id="su-name" placeholder="Enter your full name"/>
+    </div>
+
+    <div class="form-group">
+      <label>Email Address <span style="color:red">*</span></label>
+      <input type="email" id="su-email" placeholder="your.email@example.com"/>
+    </div>
+
+    <div class="form-group">
+      <label>Company / Organization</label>
+      <input type="text" id="su-company" placeholder="Your company or organization (optional)"/>
+    </div>
+
+    <div class="form-group">
+      <label>Country Code <span style="color:red">*</span></label>
+      <select id="su-country">
+        <option value="+250">+250 (Rwanda)</option>
+        <option value="+254">+254 (Kenya)</option>
+        <option value="+255">+255 (Tanzania)</option>
+        <option value="+256">+256 (Uganda)</option>
+        <option value="+251">+251 (Ethiopia)</option>
+        <option value="+243">+243 (DR Congo)</option>
+        <option value="+1">+1 (USA/Canada)</option>
+        <option value="+44">+44 (UK)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Phone Number <span style="color:red">*</span></label>
+      <input type="tel" id="su-phone" placeholder="788 123 456"/>
+    </div>
+
+    <button class="btn-signup-full" onclick="doSignUp()">✔ Sign Up</button>
+
+    <hr class="divider"/>
+
+    <p class="signup-footer-text">
+      Already signed up? <a href="index.html">Go to Home</a>
+    </p>
+  </div>
+</div>
+
+<a href="index.html" class="back-home-signup">← Back to Home</a>
+
+<script src="shared.js"></script>
+<script>
+  // If already signed up, redirect to home
+  if (localStorage.getItem('alpha_user_signed_up')) {
+    window.location.href = 'index.html';
+  }
+
+  document.getElementById('navbar-container').innerHTML = getNavbar('');
+  initNavbarScroll(false);
+  document.getElementById('navbar').classList.add('solid');
+
+  async function doSignUp() {
+    const name    = document.getElementById('su-name').value.trim();
+    const email   = document.getElementById('su-email').value.trim();
+    const company = document.getElementById('su-company').value.trim();
+    const country = document.getElementById('su-country').value;
+    const phone   = document.getElementById('su-phone').value.trim();
+    const errorEl = document.getElementById('signup-error');
+
+    if (!name || !email || !phone) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = '⚠️ Please fill in all required fields.';
+      return;
+    }
+
+    errorEl.style.display = 'none';
+
+    // Send to PHP backend (database)
+    const formData = new FormData();
+    formData.append('full_name',    name);
+    formData.append('email',        email);
+    formData.append('company',      company);
+    formData.append('country_code', country);
+    formData.append('phone',        phone);
+
+    try {
+      const response = await fetch('signup_handler.php', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        // Also save to localStorage so navbar hides Sign Up button
+        localStorage.setItem('alpha_user_signed_up', 'true');
+        localStorage.setItem('alpha_user_data', JSON.stringify({ name, email, company, country, phone }));
+
+        // Show success screen
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('user-welcome').innerHTML = `
+          Welcome, <strong>${name}</strong>! 👋<br/>
+          <span style="color:var(--gray-text);font-size:0.85rem">${email} &nbsp;|&nbsp; ${country} ${phone}</span>
+        `;
+        document.getElementById('success-screen').style.display = 'block';
+      } else {
+        errorEl.style.display = 'block';
+        errorEl.textContent = '⚠️ ' + result.message;
+      }
+    } catch (err) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = '⚠️ Something went wrong. Please try again.';
+    }
+  }
+
+  function goHome() {
+    window.location.href = 'index.html';
+  }
+
+  // Allow Enter key
+  document.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') doSignUp();
+  });
+</script>
+</body>
+</html>

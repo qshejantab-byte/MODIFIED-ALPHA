@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request a Quote | Alpha Computer LTD - AV Solutions Rwanda</title>
+  <meta name="description" content="Request a quote from Alpha Computer LTD for AV system integration, LED screens, smart classrooms, boardroom AV, networking, and more in Rwanda. We respond within 24 hours."/>
+  <meta name="keywords" content="request quote AV Rwanda, LED screen price Rwanda, smart classroom quote Rwanda, AV integration quote Kigali"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Alpha Computer LTD"/>
+  <link rel="canonical" href="https://www.alphacomputer.rw/request-quote.html"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.alphacomputer.rw/request-quote.html"/>
+  <meta property="og:title" content="Request a Quote | Alpha Computer LTD Rwanda"/>
+  <meta property="og:description" content="Get a custom quote for AV systems, LED screens, smart classrooms, and networking solutions. Response within 24 hours."/>
+  <meta property="og:image" content="https://www.alphacomputer.rw/images/logo2.jpg"/>
+  <meta property="og:site_name" content="Alpha Computer LTD"/>
+
+  <!-- AEO: Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AV System Integration Quote - Alpha Computer LTD",
+    "url": "https://www.alphacomputer.rw/request-quote.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "Alpha Computer LTD",
+      "telephone": "+250788310989",
+      "email": "info@alphacomputer.rw"
+    },
+    "description": "Request a customized quote for AV system integration, LED screens, smart classrooms, boardroom solutions, networking, and other technology services in Rwanda.",
+    "areaServed": ["Rwanda", "East Africa"],
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://www.alphacomputer.rw/request-quote.html",
+      "servicePhone": "+250788310989",
+      "servicePostalAddress": {
+        "@type": "PostalAddress",
+        "streetAddress": "KN 2 Ave, Mic Building Ground Floor",
+        "addressLocality": "Kigali",
+        "addressCountry": "RW"
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* ===== QUOTE PAGE SPECIFIC STYLES ===== */
+    .quote-page {
+      min-height: 100vh;
+      background: var(--gray-light);
+    }
+
+    .quote-hero {
+      background: var(--blue-dark);
+      padding: 120px 80px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232B3FDE' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .quote-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(224, 138, 0, 0.15);
+      border: 1px solid var(--orange);
+      color: var(--orange);
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: white;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-hero h1 span { color: var(--orange); }
+
+    .quote-hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Product badge shown at top of form */
+    .product-badge-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(43, 63, 222, 0.08);
+      border: 1.5px solid rgba(43, 63, 222, 0.2);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue-primary);
+    }
+
+    .product-badge .badge-dot {
+      width: 8px; height: 8px;
+      background: var(--blue-primary);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    /* Main form container */
+    .quote-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
+
+    .quote-card {
+      background: white;
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .quote-card-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .quote-card-header .logo-wrap {
+      width: 64px; height: 64px;
+      background: var(--gray-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      overflow: hidden;
+      padding: 4px;
+    }
+
+    .quote-card-header .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .quote-card-header h2 {
+      font-size: 1.6rem;
+      color: var(--dark-text);
+      margin-bottom: 6px;
+    }
+
+    .quote-card-header p {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+    }
+
+    /* Form grid - 2 columns for name+email */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .quote-card { padding: 28px 20px; }
+      .quote-hero { padding: 120px 20px 50px; }
+    }
+
+    /* Product name field - special style */
+    .product-field input {
+      background: rgba(43, 63, 222, 0.04) !important;
+      border-color: rgba(43, 63, 222, 0.25) !important;
+      color: var(--blue-primary) !important;
+      font-weight: 600 !important;
+    }
+
+    .product-field label::after {
+      content: ' (pre-filled)';
+      font-size: 0.75rem;
+      color: var(--blue-primary);
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    /* Submit button */
+    .btn-submit-quote {
+      width: 100%;
+      padding: 16px;
+      background: var(--blue-primary);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-submit-quote:hover {
+      background: #1f31c7;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(43,63,222,0.35);
+    }
+
+    .btn-submit-quote:active { transform: translateY(0); }
+
+    /* Back button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .back-btn:hover { color: white; }
+
+    /* Success screen */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .success-icon {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 24px;
+      animation: successPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes successPop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .success-screen h3 {
+      font-size: 1.6rem;
+      color: var(--dark-text);
+      margin-bottom: 10px;
+    }
+
+    .success-screen p {
+      color: var(--gray-text);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .success-details {
+      background: var(--gray-light);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+
+    .success-details .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-mid);
+      font-size: 0.88rem;
+    }
+
+    .success-details .detail-row:last-child { border-bottom: none; }
+    .success-details .detail-label { color: var(--gray-text); }
+    .success-details .detail-value { font-weight: 600; color: var(--dark-text); }
+
+    .btn-back-products {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-primary);
+      color: white;
+      padding: 13px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-back-products:hover {
+      background: #1f31c7;
+      transform: translateY(-1px);
+    }
+
+    /* Divider */
+    .form-divider {
+      border: none;
+      border-top: 1px solid var(--gray-mid);
+      margin: 28px 0;
+    }
+
+    /* Step indicator */
+    .step-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gray-light);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 28px;
+      font-size: 0.85rem;
+      color: var(--gray-text);
+    }
+
+    .step-info .step-icon {
+      width: 32px; height: 32px;
+      background: var(--blue-primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="quote-page">
+
+<div id="navbar-container"></div>
+
+<!-- BACK LINK -->
+<div style="padding: 100px 80px 0;">
+  <a href="javascript:history.back()" style="display:inline-flex;align-items:center;gap:8px;color:var(--blue-primary);font-size:0.9rem;font-weight:600;text-decoration:none;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">← Back</a>
+</div>
+
+<!-- FORM CONTAINER -->
+<div class="quote-container">
+  <div class="quote-card">
+
+    <!-- Logo + Header -->
+    <div class="quote-card-header">
+      <div class="logo-wrap">
+        <img src="logo2.jpg" alt="Alpha Computer LTD"/>
+      </div>
+      <h2>Quote Request Form</h2>
+      <p>Please fill in all fields marked with <span style="color:red">*</span></p>
+    </div>
+
+    <!-- Product badge -->
+    <div class="product-badge-wrap" id="product-badge-wrap">
+      <div class="product-badge">
+        <div class="badge-dot"></div>
+        <span id="product-badge-text">Product: Loading...</span>
+      </div>
+    </div>
+
+    <!-- Step info -->
+    <div class="step-info">
+      <div class="step-icon">💡</div>
+      <span>You're requesting a quote for <strong id="step-product-name">a product</strong>. Complete the form and our team will contact you with pricing details.</span>
+    </div>
+
+    <!-- SUCCESS SCREEN (hidden by default) -->
+    <div class="success-screen" id="success-screen">
+      <div class="success-icon">✓</div>
+      <h3>Quote Request Sent!</h3>
+      <p>Thank you! Your quote request has been received. Our team will review your request and get back to you within <strong>24 hours</strong>.</p>
+      <div class="success-details" id="success-details"></div>
+      <a href="products.html"><button class="btn-back-products">← Back to Products</button></a>
+    </div>
+
+    <!-- FORM -->
+    <div id="quote-form">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Company / Customer Name <span style="color:red">*</span></label>
+          <input type="text" id="q-name" placeholder="Enter your company or name"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span style="color:red">*</span></label>
+          <input type="email" id="q-email" placeholder="your.email@example.com"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Subject <span style="color:red">*</span></label>
+        <input type="text" id="q-subject" placeholder="e.g. Quote request for office installation"/>
+      </div>
+
+      <!-- Product field: pre-filled for individual products, dropdown for bundle products -->
+      <div class="form-group product-field" id="product-prefilled-group">
+        <label>Product Name <span style="color:red">*</span> <span style="color:var(--blue-primary);font-size:0.8rem">(pre-filled)</span></label>
+        <input type="text" id="q-product" placeholder="Product name" readonly style="background:#f0f4ff;color:var(--blue-primary);font-weight:600;border-color:#c7d4ff"/>
+      </div>
+
+      <!-- Checkboxes for bundle products (Smart Classroom, Control Room, etc.) -->
+      <div class="form-group" id="sub-product-group" style="display:none">
+        <label id="sub-product-label">Select Products <span style="color:red">*</span></label>
+
+        <!-- Dropdown trigger button -->
+        <div id="sub-product-trigger" onclick="toggleCheckboxPanel()" style="
+          width:100%;padding:12px 16px;border:1.5px solid var(--gray-mid);
+          border-radius:var(--radius);font-size:0.97rem;font-family:inherit;
+          color:var(--gray-text);background:white;cursor:pointer;
+          display:flex;justify-content:space-between;align-items:center;
+          user-select:none;box-sizing:border-box;
+        ">
+          <span id="sub-product-trigger-text">-- Select products --</span>
+          <span id="sub-product-arrow" style="transition:transform 0.25s;font-size:0.85rem;">▼</span>
+        </div>
+
+        <!-- Collapsible checkbox panel -->
+        <div id="sub-product-panel" style="
+          display:none;
+          border:1.5px solid var(--gray-mid);border-top:none;
+          border-radius:0 0 var(--radius) var(--radius);
+          background:white;padding:12px;
+          box-shadow:0 4px 12px rgba(0,0,0,0.08);
+        ">
+          <!-- Select All row -->
+          <label for="chk-all" style="
+            display:flex;align-items:center;gap:10px;
+            padding:10px 14px;margin-bottom:8px;
+            border:1.5px solid var(--blue-primary);border-radius:8px;
+            cursor:pointer;font-size:0.93rem;font-weight:600;
+            color:var(--blue-primary);background:#f0f4ff;user-select:none;
+          ">
+            <input type="checkbox" id="chk-all" onchange="toggleSelectAll(this)"
+              style="width:17px;height:17px;accent-color:var(--blue-primary);cursor:pointer;flex-shrink:0;">
+            <span>Select All</span>
+          </label>
+
+          <!-- Individual checkboxes -->
+          <div id="q-sub-product-checkboxes" style="
+            display:grid;
+            grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+            gap:8px;
+          "></div>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--gray-text);margin-top:6px">
+          Click the box above to select one or more products.
+        </p>
+      </div>
+
+      <!-- Custom product input (shown when Other is selected) -->
+      <div class="form-group" id="custom-product-group" style="display:none">
+        <label>Specify Your Product <span style="color:red">*</span></label>
+        <input type="text" id="q-custom-product" placeholder="Describe the specific product or item you need"/>
+      </div>
+
+      <div class="form-group">
+        <label>Number of Units <span style="color:red">*</span></label>
+        <input type="number" id="q-quantity" min="1" value="1" placeholder="Enter quantity" style="max-width:200px;"/>
+        <p style="font-size:0.8rem;color:var(--gray-text);margin-top:6px">How many units of this product do you need?</p>
+      </div>
+
+      <div class="form-group">
+        <label>Description <span style="color:red">*</span></label>
+        <textarea id="q-description" placeholder="Please describe your requirements, installation location, budget range, or any other relevant details..." maxlength="600" oninput="updateCharCount(this)"></textarea>
+        <div class="char-count"><span id="q-char-count">0</span>/600 characters</div>
+      </div>
+
+      <!-- Error message -->
+      <div id="q-error" style="display:none;background:#fef2f2;border:1px solid #fca5a5;color:#dc2626;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:0.88rem;display:none">
+        ⚠️ Please fill in all required fields before submitting.
+      </div>
+
+      <button class="btn-submit-quote" onclick="submitQuote()">
+        📤 Submit Quote Request
+      </button>
+
+      <hr class="form-divider"/>
+
+      <p style="text-align:center;font-size:0.82rem;color:var(--gray-text)">
+        Need immediate assistance? Call us at <strong>+250 788 310 989</strong> or email <strong>info@alphacomputer.rw</strong>
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div id="footer-container"></div>
+
+<script src="shared.js"></script>
+<script>
+  // Inject navbar (solid, not in nav links) and footer
+  document.getElementById('navbar-container').innerHTML = getNavbar('');
+  document.getElementById('footer-container').innerHTML = getFooter();
+  initNavbarScroll(false);
+  initScrollAnimations();
+
+  // Product sub-items mapping
+  const productSubItems = {
+    'Smart Classrooms': [
+      'Interactive Flat Panel',
+      'Smart Podium',
+      'Projector & Screen',
+      'Audio System (Speakers & Mic)',
+      'Visualizer / Document Camera',
+      'Classroom Management Software',
+      'Structured Cabling & Network',
+      'Other (specify below)'
+    ],
+    'Smart Classroom Setup': [
+      'Interactive Flat Panel',
+      'Smart Podium',
+      'Projector & Screen',
+      'Audio System (Speakers & Mic)',
+      'Visualizer / Document Camera',
+      'Classroom Management Software',
+      'Structured Cabling & Network',
+      'Other (specify below)'
+    ],
+    'Control Room Setup': [
+      'LED Video Wall',
+      'Control Desk / Console',
+      'Video Matrix Switcher',
+      'KVM Switches',
+      'Monitoring Screens',
+      'Uninterruptible Power Supply (UPS)',
+      'Structured Cabling & Network',
+      'Other (specify below)'
+    ],
+    'Meeting Room Setup': [
+      'Interactive Flat Panel',
+      'Video Conferencing System',
+      'Wireless Presentation System',
+      'Audio System (Speakers & Mic)',
+      'Motorized Screen & Projector',
+      'Lighting Control System',
+      'Structured Cabling & Network',
+      'Other (specify below)'
+    ],
+    'Smart Boardroom Setup': [
+      'Interactive Flat Panel / 4K Display',
+      'Video Conferencing System',
+      'Wireless Presentation System',
+      'Audio System (Speakers & Mic)',
+      'Motorized Screen & Projector',
+      'Room Booking System',
+      'Structured Cabling & Network',
+      'Other (specify below)'
+    ],
+    'Stage Lighting': [
+      'LED Par Lights',
+      'Moving Head Lights',
+      'Follow Spotlights',
+      'Lighting Controller / DMX',
+      'Fog / Haze Machine',
+      'Truss & Rigging',
+      'Other (specify below)'
+    ],
+    'Stage Lighting Setup': [
+      'LED Par Lights',
+      'Moving Head Lights',
+      'Follow Spotlights',
+      'Lighting Controller / DMX',
+      'Fog / Haze Machine',
+      'Truss & Rigging',
+      'Other (specify below)'
+    ]
+  };
+
+  // Get product name from URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const productName = urlParams.get('product') || 'General Inquiry';
+
+  // Fill product name everywhere
+  document.getElementById('q-product').value = productName;
+  document.getElementById('product-badge-text').textContent = 'Product: ' + productName;
+  document.getElementById('step-product-name').textContent = productName;
+
+  // Show dropdown OR pre-filled based on product type
+  if (productSubItems[productName]) {
+    // Bundle product — hide pre-filled, show checkboxes
+    document.getElementById('product-prefilled-group').style.display = 'none';
+    const subGroup = document.getElementById('sub-product-group');
+    subGroup.style.display = 'block';
+
+    // Update label
+    const friendlyNames = {
+      'Smart Classrooms': 'Smart Classroom',
+      'Smart Classroom Setup': 'Smart Classroom Setup',
+      'Meeting Room Setup': 'Smart Boardroom Setup',
+      'Smart Boardroom Setup': 'Smart Boardroom Setup',
+      'Control Room Setup': 'Control Room Setup',
+      'Stage Lighting': 'Stage Lighting',
+      'Stage Lighting Setup': 'Stage Lighting Setup'
+    };
+    const displayName = friendlyNames[productName] || productName;
+    document.getElementById('sub-product-label').innerHTML =
+      'Select Products for <strong style="color:var(--blue-primary)">' + displayName + '</strong> <span style="color:red">*</span>';
+
+    // Populate checkboxes
+    const container = document.getElementById('q-sub-product-checkboxes');
+    container.innerHTML = '';
+    productSubItems[productName].forEach((item, i) => {
+      const id = 'chk-' + i;
+      const wrapper = document.createElement('label');
+      wrapper.setAttribute('for', id);
+      wrapper.style.cssText = 'display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px solid var(--gray-mid);border-radius:8px;cursor:pointer;font-size:0.93rem;color:var(--dark-text);transition:all 0.2s;user-select:none;';
+
+      const chk = document.createElement('input');
+      chk.type = 'checkbox';
+      chk.id = id;
+      chk.value = item;
+      chk.name = 'sub-product';
+      chk.style.cssText = 'width:17px;height:17px;accent-color:var(--blue-primary);cursor:pointer;flex-shrink:0;';
+      chk.addEventListener('change', function() {
+        wrapper.style.borderColor = this.checked ? 'var(--blue-primary)' : 'var(--gray-mid)';
+        wrapper.style.background = this.checked ? '#f0f4ff' : 'white';
+        if (item === 'Other (specify below)') {
+          document.getElementById('custom-product-group').style.display = this.checked ? 'block' : 'none';
+          if (!this.checked) document.getElementById('q-custom-product').value = '';
+        }
+        // Sync Select All checkbox
+        const allBoxes = document.querySelectorAll('input[name="sub-product"]');
+        document.getElementById('chk-all').checked = [...allBoxes].every(c => c.checked);
+        updateTriggerText();
+      });
+
+      const span = document.createElement('span');
+      span.textContent = item;
+
+      wrapper.appendChild(chk);
+      wrapper.appendChild(span);
+      container.appendChild(wrapper);
+    });
+
+    // Close panel when clicking outside
+    document.addEventListener('click', function(e) {
+      const group = document.getElementById('sub-product-group');
+      if (group && !group.contains(e.target)) closeCheckboxPanel();
+    });
+
+  } else {
+    // Individual product — keep pre-filled, hide dropdown
+    document.getElementById('product-prefilled-group').style.display = 'block';
+    document.getElementById('sub-product-group').style.display = 'none';
+  }
+
+  function handleSubProductChange() {}
+
+  function toggleCheckboxPanel() {
+    const panel  = document.getElementById('sub-product-panel');
+    const arrow  = document.getElementById('sub-product-arrow');
+    const trigger = document.getElementById('sub-product-trigger');
+    const open = panel.style.display === 'none' || panel.style.display === '';
+    panel.style.display  = open ? 'block' : 'none';
+    arrow.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+    trigger.style.borderRadius = open
+      ? 'var(--radius) var(--radius) 0 0'
+      : 'var(--radius)';
+    trigger.style.borderColor = open ? 'var(--blue-primary)' : 'var(--gray-mid)';
+  }
+
+  function closeCheckboxPanel() {
+    const panel   = document.getElementById('sub-product-panel');
+    const arrow   = document.getElementById('sub-product-arrow');
+    const trigger = document.getElementById('sub-product-trigger');
+    if (!panel) return;
+    panel.style.display   = 'none';
+    arrow.style.transform = 'rotate(0deg)';
+    trigger.style.borderRadius = 'var(--radius)';
+    trigger.style.borderColor  = 'var(--gray-mid)';
+  }
+
+  function toggleSelectAll(allChk) {
+    const boxes = document.querySelectorAll('input[name="sub-product"]');
+    boxes.forEach(chk => {
+      chk.checked = allChk.checked;
+      // Update visual state of each label
+      const lbl = chk.closest('label');
+      if (lbl) {
+        lbl.style.borderColor = allChk.checked ? 'var(--blue-primary)' : 'var(--gray-mid)';
+        lbl.style.background  = allChk.checked ? '#f0f4ff' : 'white';
+      }
+    });
+    // Handle "Other" field visibility
+    const otherChk = [...boxes].find(c => c.value === 'Other (specify below)');
+    if (otherChk) {
+      document.getElementById('custom-product-group').style.display = allChk.checked ? 'block' : 'none';
+      if (!allChk.checked) document.getElementById('q-custom-product').value = '';
+    }
+    updateTriggerText();
+  }
+
+  function updateTriggerText() {
+    const checked = [...document.querySelectorAll('input[name="sub-product"]:checked')];
+    const txt = document.getElementById('sub-product-trigger-text');
+    if (!txt) return;
+    if (checked.length === 0) {
+      txt.textContent = '-- Select products --';
+      txt.style.color = 'var(--gray-text)';
+    } else {
+      txt.textContent = checked.map(c => c.value).join(', ');
+      txt.style.color = 'var(--dark-text)';
+    }
+  }
+
+  function updateCharCount(el) {
+    document.getElementById('q-char-count').textContent = el.value.length;
+  }
+
+  async function submitQuote() {
+    const name = document.getElementById('q-name').value.trim();
+    const email = document.getElementById('q-email').value.trim();
+    const subject = document.getElementById('q-subject').value.trim();
+    const product = document.getElementById('q-product').value.trim();
+    const subProductEl = document.getElementById('q-sub-product-checkboxes');
+    const customProductEl = document.getElementById('q-custom-product');
+    let finalProduct = product;
+
+    if (subProductEl && document.getElementById('sub-product-group').style.display !== 'none') {
+      const checked = [...document.querySelectorAll('input[name="sub-product"]:checked')].map(c => c.value);
+      if (checked.length === 0) {
+        errorEl.style.display = 'block';
+        errorEl.textContent = '⚠️ Please select at least one product.';
+        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (checked.includes('Other (specify below)')) {
+        const customVal = customProductEl.value.trim();
+        if (!customVal) {
+          errorEl.style.display = 'block';
+          errorEl.textContent = '⚠️ Please specify your product in the text field.';
+          errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        const others = checked.filter(v => v !== 'Other (specify below)');
+        finalProduct = product + ' - ' + [...others, customVal].join(', ');
+      } else {
+        finalProduct = product + ' - ' + checked.join(', ');
+      }
+    }
+    const quantity = document.getElementById('q-quantity').value.trim();
+    const desc = document.getElementById('q-description').value.trim();
+    const errorEl = document.getElementById('q-error');
+
+    if (!name || !email || !subject || !quantity || parseInt(quantity) < 1 || !desc) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = '⚠️ Please fill in all required fields before submitting.';
+      errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    errorEl.style.display = 'none';
+
+    // Send to PHP backend (database)
+    const formData = new FormData();
+    formData.append('customer_name', name);
+    formData.append('email',         email);
+    formData.append('subject',       subject);
+    formData.append('product_name',  finalProduct);
+    formData.append('quantity',      quantity);
+    formData.append('description',   desc);
+
+    try {
+      const response = await fetch('quote_handler.php', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        // Show success screen
+        document.getElementById('quote-form').style.display = 'none';
+        document.getElementById('product-badge-wrap').style.display = 'none';
+        document.querySelector('.step-info').style.display = 'none';
+
+        // Fill success details
+        document.getElementById('success-details').innerHTML = `
+          <div class="detail-row">
+            <span class="detail-label">Name / Company</span>
+            <span class="detail-value">${name}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Email</span>
+            <span class="detail-value">${email}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Product</span>
+            <span class="detail-value" style="color:var(--blue-primary)">${product}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Units Requested</span>
+            <span class="detail-value">${quantity}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Subject</span>
+            <span class="detail-value">${subject}</span>
+          </div>
+        `;
+
+        const successScreen = document.getElementById('success-screen');
+        successScreen.style.display = 'block';
+        successScreen.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        errorEl.style.display = 'block';
+        errorEl.textContent = '⚠️ ' + result.message;
+        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = '⚠️ Something went wrong. Please try again.';
+      errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Alpha Computer LTD</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div id="navbar-container"></div>
+
+<div class="login-page">
+  <div class="login-card animate-on-scroll">
+    <div class="login-logo">
+      <div style="display:flex;justify-content:center;margin-bottom:8px">
+        <div style="width:80px;height:80px;background:white;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:4px;box-shadow:0 4px 12px rgba(0,0,0,0.15)">
+          <img src="logo2.jpg" style="width:100%;height:100%;object-fit:contain;" alt="Alpha Computer LTD Logo"/>
+        </div>
+      </div>
+      <div class="login-logo-text">Alpha Computer LTD</div>
+    </div>
+
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Login to access your account</p>
+
+    <div id="login-error" style="display:none;background:#fef2f2;border:1px solid #ef4444;color:#dc2626;padding:12px 16px;border-radius:8px;margin-bottom:16px;font-size:0.88rem">
+      ⚠️ Please fill in all required fields.
+    </div>
+
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" id="fullname" placeholder="Enter your full name"/>
+    </div>
+    <div class="form-group">
+      <label>Email Address *</label>
+      <input type="email" id="email" placeholder="your.email@example.com"/>
+    </div>
+    <div class="form-group">
+      <label>Country Code *</label>
+      <select id="country-code">
+        <option value="+250">+250 (Rwanda)</option>
+        <option value="+254">+254 (Kenya)</option>
+        <option value="+255">+255 (Tanzania)</option>
+        <option value="+256">+256 (Uganda)</option>
+        <option value="+251">+251 (Ethiopia)</option>
+        <option value="+243">+243 (DR Congo)</option>
+        <option value="+1">+1 (USA/Canada)</option>
+        <option value="+44">+44 (UK)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Phone Number *</label>
+      <input type="tel" id="phone" placeholder="788 123 456"/>
+    </div>
+
+    <button class="btn-login-full" onclick="doLogin()">⊞ Login</button>
+
+    <p class="login-footer-text">
+      Don't have an account? <a href="support.html">Contact us</a>
+    </p>
+  </div>
+
+  <a href="index.html" class="back-home">← Back to Home</a>
+</div>
+
+<script src="shared.js"></script>
+<script>
+document.getElementById('navbar-container').innerHTML = getNavbar('');
+initNavbarScroll(false);
+
+// Style the navbar on login page
+document.getElementById('navbar').classList.add('solid');
+
+function doLogin() {
+  const name = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  if (!name || !email || !phone) {
+    document.getElementById('login-error').style.display = 'block';
+    return;
+  }
+
+  document.getElementById('login-error').style.display = 'none';
+
+  // Simulate login
+  const btn = document.querySelector('.btn-login-full');
+  btn.textContent = 'Logging in...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    alert(`Welcome, ${name}! Login successful.`);
+    window.location.href = 'index.html';
+  }, 1200);
+}
+
+// Allow Enter key
+document.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') doLogin();
+});
+</script>
+</body>
+</html>
