@@ -70,7 +70,7 @@ function getFooter() {
           <a href="https://www.linkedin.com/in/alpha-computer-ltd-0b9b422a3/" target="_blank" title="LinkedIn" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="https://instagram.com/alphacomputer106?r=nametag" target="_blank" title="Instagram" class="social-link">
+          <a href="https://www.instagram.com/alphacomputerltd/" target="_blank" title="Instagram" class="social-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
           <a href="https://wa.me/+250788310989" target="_blank" title="WhatsApp" class="social-link">
@@ -92,21 +92,21 @@ function getFooter() {
       <div class="footer-col">
         <h4>Contact Info</h4>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon">✉</div>
+          <div class="footer-contact-icon"><i class="fa-regular fa-envelope"></i></div>
           <div>
             <div class="label">Email</div>
             <div class="value">info@alphacomputer.rw</div>
           </div>
         </div>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
           <div>
             <div class="label">Phone</div>
             <div class="value">+250 788 310 989</div>
           </div>
         </div>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon">📍</div>
+          <div class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
           <div>
             <div class="label">Address</div>
             <div class="value">KN 2 Ave, Mic Building Ground Floor</div>
@@ -118,7 +118,7 @@ function getFooter() {
         <div class="footer-hours-row"><span class="day">Mon - Fri</span><span class="time">9:00 AM - 5:00 PM</span></div>
         <div class="footer-hours-row"><span class="day">Saturday</span><span class="time">9:00 AM - 3:00 PM</span></div>
         <div class="footer-hours-row"><span class="day">Sunday</span><span class="time" style="color:rgba(255,255,255,0.4)">Closed</span></div>
-        <a href="support.html" class="footer-get-touch">✉ Get in Touch</a>
+        <a href="support.html" class="footer-get-touch"><i class="fa-regular fa-envelope"></i> Get in Touch</a>
       </div>
     </div>
     <div class="footer-bottom">

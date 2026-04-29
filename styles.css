@@ -591,6 +591,7 @@ img { max-width: 100%; }
 .mvv-card.vision { background: var(--blue-dark); }
 
 .mvv-icon {
+  color: white;
   width: 52px; height: 52px;
   background: var(--orange);
   border-radius: 12px;
@@ -622,6 +623,7 @@ img { max-width: 100%; }
 .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
 .value-icon {
+  color: white;
   width: 52px; height: 52px;
   background: var(--blue-primary);
   border-radius: 12px;
@@ -1218,6 +1220,7 @@ img { max-width: 100%; }
 .expertise-card.featured .expertise-icon { background: var(--orange); }
 
 .expertise-icon {
+  color: white;
   width: 52px; height: 52px;
   background: var(--blue-primary);
   border-radius: 12px;

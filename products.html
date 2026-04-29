@@ -19,6 +19,7 @@
   <meta name="twitter:title" content="Products | Alpha Computer LTD Rwanda"/>
   <meta name="twitter:description" content="LED screens, smart classrooms, boardroom setup, control rooms, networking & more across Rwanda and East Africa."/>
   <meta name="twitter:image" content="https://www.alphacomputer.rw/images/LED screen.png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -28,9 +29,9 @@
 
 <!-- FILTER BAR -->
 <div class="filter-bar" id="filter-bar" style="justify-content:center;">
-  <button class="filter-btn active" onclick="filterProducts('av', this)">🔊 AV Products</button>
-  <button class="filter-btn" onclick="filterProducts('setup', this)">🛠️ AV Setup</button>
-  <button class="filter-btn" onclick="filterProducts('networking', this)">📡 Networking</button>
+  <button class="filter-btn active" onclick="filterProducts('av', this)"><i class="fa-solid fa-display"></i> AV Products</button>
+  <button class="filter-btn" onclick="filterProducts('setup', this)"><i class="fa-solid fa-screwdriver-wrench"></i> AV Setup</button>
+  <button class="filter-btn" onclick="filterProducts('networking', this)"><i class="fa-solid fa-network-wired"></i> Networking</button>
 </div>
 
 <!-- AUDIO VISUAL -->
@@ -343,7 +344,7 @@
 <section class="custom-solution">
   <h2>Need a Custom Solution?</h2>
   <p>Our team of experts is ready to design and implement a technology solution tailored to your specific requirements</p>
-  <a href="support.html"><button class="btn-yellow">✉ Contact Our Team</button></a>
+  <a href="support.html"><button class="btn-yellow"><i class="fa-regular fa-envelope"></i> Contact Our Team</button></a>
 </section>
 
 <div id="footer-container"></div>
@@ -375,7 +376,14 @@ filterProducts('av', document.querySelectorAll('.filter-btn')[0]);
 
 function requestQuote(productName) {
   const encoded = encodeURIComponent(productName);
-  window.location.href = 'request-quote.html?product=' + encoded;
+  const isSignedUp = localStorage.getItem('alpha_user_signed_up');
+  if (!isSignedUp) {
+    // Save intended product so signup page can redirect back after sign-up
+    localStorage.setItem('alpha_quote_pending', productName);
+    window.location.href = 'signup.html?redirect=request-quote&product=' + encoded;
+  } else {
+    window.location.href = 'request-quote.html?product=' + encoded;
+  }
 }
 </script>
 </body>

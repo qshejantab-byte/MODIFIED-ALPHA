@@ -178,7 +178,7 @@
     <h3>Welcome Aboard! 🎉</h3>
     <p>You've successfully signed up. You're now part of the Alpha Computer LTD community!</p>
     <div class="user-welcome" id="user-welcome"></div>
-    <button class="btn-go-home" onclick="goHome()">Go to Home Page →</button>
+    <button class="btn-go-home" id="btn-after-signup" onclick="handlePostSignup()">Continue →</button>
   </div>
 
   <!-- SIGNUP FORM -->
@@ -238,9 +238,14 @@
 
 <script src="shared.js"></script>
 <script>
-  // If already signed up, redirect to home
+  // If already signed up, skip signup — but honour any pending quote redirect
   if (localStorage.getItem('alpha_user_signed_up')) {
-    window.location.href = 'index.html';
+    const _p = new URLSearchParams(window.location.search);
+    if (_p.get('redirect') === 'request-quote' && _p.get('product')) {
+      window.location.href = 'request-quote.html?product=' + encodeURIComponent(_p.get('product'));
+    } else {
+      window.location.href = 'index.html';
+    }
   }
 
   document.getElementById('navbar-container').innerHTML = getNavbar('');
@@ -289,6 +294,12 @@
           Welcome, <strong>${name}</strong>! 👋<br/>
           <span style="color:var(--gray-text);font-size:0.85rem">${email} &nbsp;|&nbsp; ${country} ${phone}</span>
         `;
+        // Update success button label if quote redirect is pending
+        const _sp = new URLSearchParams(window.location.search);
+        if (_sp.get('redirect') === 'request-quote' && _sp.get('product')) {
+          const prodName = decodeURIComponent(_sp.get('product'));
+          document.getElementById('btn-after-signup').textContent = '→ Continue to Request Quote for ' + prodName;
+        }
         document.getElementById('success-screen').style.display = 'block';
       } else {
         errorEl.style.display = 'block';
@@ -300,8 +311,14 @@
     }
   }
 
-  function goHome() {
-    window.location.href = 'index.html';
+  function handlePostSignup() {
+    const _p = new URLSearchParams(window.location.search);
+    if (_p.get('redirect') === 'request-quote' && _p.get('product')) {
+      localStorage.removeItem('alpha_quote_pending');
+      window.location.href = 'request-quote.html?product=' + encodeURIComponent(_p.get('product'));
+    } else {
+      window.location.href = 'index.html';
+    }
   }
 
   // Allow Enter key

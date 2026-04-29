@@ -150,7 +150,7 @@
 
   <div class="hero-content">
     <div class="hero-badge" id="hero-badge">
-      <div class="badge-icon">🖥️</div>
+      <div class="badge-icon"><i class="fa-solid fa-tv"></i></div>
       <span id="hero-badge-text">Interactive Flat Panels</span>
     </div>
     <h1 id="hero-title">Interactive<br>Flat Panels</h1>
@@ -185,35 +185,35 @@
 <section class="industries-section">
   <div class="industries-grid">
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🎓</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;"><i class="fa-solid fa-graduation-cap"></i></div>
       <span>Education</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🏢</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;"><i class="fa-solid fa-building"></i></div>
       <span>Corporate</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🏛️</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;"><i class="fa-solid fa-building-columns"></i></div>
       <span>Government</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🎭</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;">🎭</div>
       <span>Events & Entertainment</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🏥</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;"><i class="fa-solid fa-hospital"></i></div>
       <span>Healthcare</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🏨</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;"><i class="fa-solid fa-hotel"></i></div>
       <span>Hospitality</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">🛍️</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;">🛍️</div>
       <span>Retail</span>
     </div>
     <div class="industry-card animate-on-scroll">
-      <div class="industry-icon">⛪</div>
+      <div class="industry-icon" style="color:white;font-size:2rem;"><i class="fa-solid fa-church"></i></div>
       <span>Houses of Worship</span>
     </div>
   </div>
@@ -263,12 +263,12 @@
   <h2>Ready to Transform Your <span>Technology Infrastructure?</span></h2>
   <p>Contact us today to discuss your technology needs and discover how we can help your organization succeed</p>
   <div class="cta-btns">
-    <a href="support.html">
+    <a href="https://wa.me/+250788310989" target="_blank">
   <button class="btn-primary" style="padding:14px 32px">
     <i class="fa-solid fa-user-tag"></i> Contact Us
   </button>
 </a>
-<a href="support.html">
+<a href="https://wa.me/+250788310989" target="_blank">
   <button class="btn-secondary" style="padding:14px 32px">
     <i class="fa-solid fa-phone" style="margin-right:8px;"></i>
     Request a Quote
@@ -290,8 +290,8 @@ initScrollAnimations();
 
 // Hero slides data
 const slides = [
-  { badge: '🖥️', badgeText: 'Interactive Flat Panels', title: 'Interactive<br>Flat Panels', desc: 'Touch-enabled displays for education, collaboration, and presentations in any environment' },
-  { badge: '🔧', badgeText: 'After Sales Services', title: 'After Sales<br> Services', desc: 'From installation to maintenance and training — expert support every step of the way' },
+  { badge: '<i class="fa-solid fa-tv"></i>', badgeText: 'Interactive Flat Panels', title: 'Interactive<br>Flat Panels', desc: 'Touch-enabled displays for education, collaboration, and presentations in any environment' },
+  { badge: '<i class="fa-solid fa-screwdriver-wrench"></i>', badgeText: 'After Sales Services', title: 'After Sales<br> Services', desc: 'From installation to maintenance and training — expert support every step of the way' },
 ];
 
 let currentSlide = 0;
@@ -314,12 +314,13 @@ function goToSlide(n) {
   slideEls[currentSlide].classList.add('active');
   document.querySelectorAll('.hero-indicator')[currentSlide].classList.add('active');
   const s = slides[currentSlide];
+  document.querySelector('.badge-icon').innerHTML = s.badge;
   document.getElementById('hero-badge-text').textContent = s.badgeText;
   document.getElementById('hero-title').innerHTML = s.title;
   document.getElementById('hero-desc').textContent = s.desc;
 }
 
-setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+setInterval(() => goToSlide((currentSlide + 1) % slides.length), 6000);
 
 // Partners carousel with real logos
 const partners = [

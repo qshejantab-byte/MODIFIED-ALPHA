@@ -29,6 +29,25 @@ $stmt = $conn->prepare("INSERT INTO support_messages (customer_name, email, subj
 $stmt->bind_param("ssss", $customer_name, $email, $subject, $description);
 
 if ($stmt->execute()) {
+    // Send email notification to Alpha Computer LTD
+    $to      = 'info@alphacomputer.rw';
+    $mail_subject = 'New Website Inquiry: ' . $subject;
+    $mail_body  = "You have received a new inquiry from your website.\n\n"
+                . "-------------------------------------------\n"
+                . "Name:        " . $customer_name . "\n"
+                . "Email:       " . $email . "\n"
+                . "Subject:     " . $subject . "\n"
+                . "-------------------------------------------\n"
+                . "Message:\n" . $description . "\n"
+                . "-------------------------------------------\n"
+                . "Sent via alphacomputer.rw contact form";
+
+    $headers  = "From: noreply@alphacomputer.rw\r\n";
+    $headers .= "Reply-To: " . $email . "\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+
+    mail($to, $mail_subject, $mail_body, $headers);
+
     echo json_encode(['success' => true, 'message' => 'Message sent successfully!']);
 } else {
     echo json_encode(['success' => false, 'message' => 'Could not send your message. Please try again.']);
